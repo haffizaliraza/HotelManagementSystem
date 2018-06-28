@@ -1,7 +1,7 @@
 # HotelManagementSystem
 Hotel Management Software
 
-This web application is developed with Ruby On Rails , MySQL , Jquery ,Boostrap
+This web application is developed with Ruby On Rails 5.0.3 , MySQL , Jquery ,Boostrap
 
 # Installation
 
