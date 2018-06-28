@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: room_bokings
+#
+#  id         :integer          not null, primary key
+#  room_id    :integer
+#  booking_id :integer
+#  charges    :integer
+#  days       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: one
+  booking: one
+  charges: 1
+  days: 1
+
+two:
+  room: two
+  booking: two
+  charges: 1
+  days: 1

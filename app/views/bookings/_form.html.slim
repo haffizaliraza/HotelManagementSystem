@@ -1,0 +1,31 @@
+div.row
+  = simple_form_for(@booking) do |f|
+    = f.error_notification
+    div.col-lg-3
+    div.col-lg-4
+        .form-inputs
+          = f.input :name
+          = f.input :phone
+          = f.input :address
+
+    div.col-lg-4
+          = f.input :cnic
+          = f.input :email
+    
+    div.col-lg-12
+      div.col-lg-3
+      div.col-lg-7
+        hr
+        h3 Rooms
+        #rooms
+        div.row
+          = f.simple_fields_for :room_bokings do |r_b|
+            = render 'room_boking_fields', f: r_b
+          div.links
+            = link_to_add_association 'Add Room', f, :room_bokings , class: "btn btn-success btn-xs" 
+        hr
+    div.col-lg-12
+      div.col-lg-3
+      div.col-lg-4
+            = f.input :check_in
+            = f.button :submit

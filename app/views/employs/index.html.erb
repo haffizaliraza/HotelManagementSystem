@@ -1,0 +1,57 @@
+  <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>All Employees</h2>   
+                        <h5>Welcome , Love to see you back. </h5>
+                       
+                    </div>
+                </div>
+                 <!-- /. ROW  -->
+                 <hr />
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             
+                             <%= link_to 'Add New Employ' , new_employ_path , class: "btn btn-success btn " %> 
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class=" datatable table table-striped table-bordered table-hover datatable" id="dataTables-example ">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>CNIC</th>
+                                            <th>Phone</th>
+                                            <th>Salary</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>                                
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%- @employs.each do |e| %>
+                                        <tr>
+                                           <td> <%= e.name%> </td>
+                                           <td> <%= e.cnic %> </td>
+                                           <td> <%= e.phone_no %> </td>
+                                           <td> <%= e.salary %> </td>
+                                            <td><%= link_to 'edit' , edit_employ_path(e) , class: "btn btn-info btn-xs" %></td>
+                                            <td><%= link_to 'delete' , e , method: :delete , class: "btn btn-danger btn-xs" %></td>
+                                        </tr>
+
+                                        
+                                        <% end %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+

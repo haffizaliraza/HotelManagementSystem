@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: salaries
+#
+#  id         :integer          not null, primary key
+#  employ_id  :integer
+#  amount     :integer
+#  detail     :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employ: one
+  amount: 1
+  detail: MyString
+
+two:
+  employ: two
+  amount: 1
+  detail: MyString

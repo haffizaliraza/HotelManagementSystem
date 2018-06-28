@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Employ:
+  = @salary.employ
+p
+  strong Amount:
+  = @salary.amount
+p
+  strong Detail:
+  = @salary.detail
+
+= link_to 'Edit', edit_salary_path(@salary)
+'  |
+= link_to 'Back', salaries_path

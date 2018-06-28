@@ -1,0 +1,10 @@
+= simple_form_for(@expense) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :amount
+    = f.input :date
+    = f.input :detail
+
+  .form-actions
+    = f.button :submit

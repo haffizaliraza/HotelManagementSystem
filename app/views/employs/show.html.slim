@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @employ.name
+p
+  strong Cnic:
+  = @employ.cnic
+p
+  strong Phone no:
+  = @employ.phone_no
+
+= link_to 'Edit', edit_employ_path(@employ)
+'  |
+= link_to 'Back', employs_path

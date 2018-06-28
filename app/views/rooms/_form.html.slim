@@ -1,0 +1,10 @@
+= simple_form_for(@room) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :room_no
+    = f.label :available
+    = f.check_box :avalable
+
+  .form-actions
+    = f.button :submit

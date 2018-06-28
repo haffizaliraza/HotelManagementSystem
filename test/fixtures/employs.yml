@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: employs
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  cnic       :string(255)
+#  phone_no   :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cnic: MyString
+  phone_no: MyString
+
+two:
+  name: MyString
+  cnic: MyString
+  phone_no: MyString

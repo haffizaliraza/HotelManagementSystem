@@ -1,0 +1,56 @@
+<br>
+<div class="row">
+
+	<div class="col-lg-3"></div>
+	<div class="col-lg-9" style="margin-left: -50px">
+	
+	<table class="table table-striped table-hover table-bordered">
+		<thead>
+			<tr>
+				<th>Today's Total Earning</th>
+				<th>Today's Total Expense</th>
+				<th>Current Month Total Earning</th>
+				<th>Current Month Total Expense</th>
+				<th>Current Month Total Profit</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> <%= @todays_earning %> </td>
+				<td><%= @todays_expence %></td>
+				<td><%= @todays_earning_mon %></td>
+				<td><%= @todays_expence_mon %></td>
+				<td><%= @todays_earning_mon - @todays_expence_mon %></td>
+			</tr>
+		</tbody>
+	</table>
+
+	</div>
+</div>
+<div class="row">
+
+	<div class="col-lg-3"></div>
+	<div class="col-lg-4">
+		<h2>Daily Earning Report</h2>
+		<%= column_chart  Booking.group_by_day(:created_at , last: 10  , format: "%B-%d").sum(:total) %>
+	</div>
+		<div class="col-lg-4">
+				<h2>Daily Expense Report</h2>
+		<%= column_chart  Expense.group_by_day(:created_at , last: 10  , format: "%B-%d").sum(:amount) %>
+	</div>
+
+	<div class="row">
+
+	<div class="col-lg-3"></div>
+	<div class="col-lg-4">
+		<h2>Monthly Earning Report</h2>
+		<%= column_chart  Booking.group_by_month(:created_at , last: 10  , format: "%B-%d").sum(:total) %>
+	</div>
+		<div class="col-lg-4">
+				<h2>Monthly Expense Report</h2>
+		<%= column_chart  Expense.group_by_month(:created_at , last: 10  , format: "%B-%d").sum(:amount) %>
+	</div>
+
+
+</div>
+

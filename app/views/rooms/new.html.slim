@@ -1,0 +1,10 @@
+div.row
+	div.col-lg-4
+	div.col-lg-4
+		div.panel.panel-default.panel-cus
+			h1 New Room
+			hr
+			== render 'form'
+			br
+			hr
+			= link_to 'Back', rooms_path , class: "glyphicon glyphicon-arrow-left btn btn-default"

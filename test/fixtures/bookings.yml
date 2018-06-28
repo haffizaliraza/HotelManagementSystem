@@ -1,0 +1,50 @@
+# == Schema Information
+#
+# Table name: bookings
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  cnic          :string(255)
+#  phone         :string(255)
+#  email         :string(255)
+#  address       :string(255)
+#  bill          :integer
+#  other_charges :integer
+#  sub_total     :integer
+#  discount      :integer
+#  total         :integer
+#  check_in      :date
+#  check_out     :date
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cnic: MyString
+  phone: MyString
+  email: MyString
+  address: MyString
+  bill: 1
+  other_charges: 1
+  sub_total: 1
+  discount: 1
+  total: 1
+  check_in: 2017-08-14
+  check_out: 2017-08-14
+
+two:
+  name: MyString
+  cnic: MyString
+  phone: MyString
+  email: MyString
+  address: MyString
+  bill: 1
+  other_charges: 1
+  sub_total: 1
+  discount: 1
+  total: 1
+  check_in: 2017-08-14
+  check_out: 2017-08-14

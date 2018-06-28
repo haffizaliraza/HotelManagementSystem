@@ -1,0 +1,73 @@
+<div id="page-wrapper" >
+<div id="page-inner" >
+    <div class="row" >
+        <div class="col-md-12">
+         <h2>Bookings</h2>   
+           
+            <h5> Welcome , Love to see you back. </h5>
+           
+        </div>
+    </div>
+
+     <hr>
+<div class="row">
+    <div class="col-md-12">
+        <!-- Advanced Tables -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                 
+                 <%= link_to 'New Booking' , new_booking_path , class: "btn btn-success btn " %>
+                  
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class=" datatable table table-striped table-bordered table-hover datatable" id="dataTables-example ">
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>CNIC</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Address</th> 
+                                <th>Rate</th>
+                                <th>CheckInDate</th>
+                                <th>CheckOutDate</th>
+                                <th>Details</th>
+                                <th>Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <%- @bookings.each do |b| %>
+                            <tr>
+                            <td><%= b.name %></td>
+                            <td><%= b.cnic %></td>
+                            <td><%= b.phone %></td>
+                            <td><%= b.email %></td>
+                            <td><%= b.bill %></td>
+                            <td><%= b.address %></td>
+                            <td><%= b.check_in.strftime("%d %B %Y") if b.check_in %></td>
+                            <td>
+                            <% if b.check_out %>
+                            <%=  b.check_out.strftime("%d %B %Y") %>
+                            <%else%>
+                            <%=  link_to 'Check Out', edit_booking_path(b), class: "btn btn-default btn-xs" %>
+                            <% end %>
+                            
+                                
+                            </td>
+                                <td> <%=  link_to 'Show', b , class: "btn btn-info btn-xs" %> </td>
+
+                                <td> <%=  link_to 'Delete', b ,  data: {confirm: 'Are you shure ?'} , method: :delete ,class: "btn btn-danger btn-xs" %> </td>
+
+                            </tr>
+                            <% end %>    
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

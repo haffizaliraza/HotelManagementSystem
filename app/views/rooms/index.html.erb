@@ -1,0 +1,61 @@
+  <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                     <h2>All Rooms</h2>   
+                        <h5>Welcome , Love to see you back. </h5>
+                       
+                    </div>
+                </div>
+                 <!-- /. ROW  -->
+                 <hr />
+               
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             
+                             <%= link_to 'Add New Room' , new_room_path , class: "btn btn-success btn " %> 
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class=" datatable table table-striped table-bordered table-hover datatable" id="dataTables-example ">
+                                    <thead>
+                                        <tr>
+                                            <th>Room No</th>
+                                            <th>Available</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>                                
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%- @rooms.each do |r| %>
+                                        <tr>
+                                            <td>
+                                                <%= r.room_no %>
+                                            </td>
+                                            <td>
+                                                <%- if r.avalable %>
+                                                <i class="glyphicon glyphicon-ok"></i>
+                                                <% else %>
+                                                <i class="glyphicon glyphicon-remove"></i>
+                                                <% end %>
+                                            </td>
+                                            <td><%= link_to 'edit' , edit_room_path(r) , class: "btn btn-info btn-xs" %></td>
+                                            <td><%= link_to 'delete' , r , method: :delete , class: "btn btn-danger btn-xs" %></td>
+                                        </tr>
+
+                                        
+                                        <% end %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+

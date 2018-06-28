@@ -1,0 +1,11 @@
+div.row
+	div.col-lg-3
+		label Select Room
+		= f.collection_select :room_id , Room.where(avalable: true) , :id , :room_no , :include_blank => true 
+	div.col-lg-3
+		= f.label :rate 
+		= f.number_field :charges , class: "form-control numeric integer optional"
+	div.col-lg-3
+		= f.input :days
+
+	/ 	= link_to_remove_association "remove room", f , class: "btn btn-danger btn-xs"

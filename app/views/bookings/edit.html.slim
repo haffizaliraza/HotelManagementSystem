@@ -1,0 +1,17 @@
+div.row
+	div.col-lg-4
+	div.col-lg-4
+		= simple_form_for(@booking) do |f|
+			= f.error_notification
+			= f.input :name
+			= f.input :cnic
+			= f.input :phone
+			= f.input :email
+			= f.input :address
+			= f.input :bill
+			= f.input :check_in
+			= f.input :check_out
+			= f.input :other_charges
+			= f.input :total
+			= f.submit 'Create Bill' , class: "btn btn-default"
+br
